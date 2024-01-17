@@ -1,0 +1,40 @@
+{
+  "name": "react-mui",
+  "version": "3.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/4j7m47vlm4",
+  "main": "app.jsx",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@mui/material": "latest",
+    "@mui/icons-material": "latest",
+    "@emotion/styled": "latest",
+    "@emotion/react": "latest",
+    "@mui/x-date-pickers": "latest",
+    "dayjs": "^1.11.10"
+  },
+  "scripts": {
+    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
+    "start:prod": "pushstate-server build",
+    "build": "./node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
+    "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
+    "server": "cd client/api && pm2 start server.js --watch",
+    "proxy": "http://128.199.139.144:3000"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
