@@ -7,8 +7,9 @@ const flash = require("express-flash")
 const passport = require("passport")
 
 const initializePassport = require("./passportConfig")
-
 initializePassport(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(cors())
 app.use(express.json())
@@ -17,11 +18,7 @@ app.use(session({
     secret : 'secret',
     resave : false,
     saveUninitialized : false
-}))
-
-app.use(passport.initialize())
-app.use(passport.session())
-
+})) 
 app.use(flash())
 
 
@@ -110,6 +107,10 @@ app.post(
           );
     }
 );
+
+const movies = require('./routes/movies')
+
+app.use('/movies', movies)
 
 app.listen(5000, ()=>{
     console.log("server is listening to port 5000...")
